@@ -23,8 +23,7 @@ CodeLock is an interactive password generator with a visually stunning 3D partic
 3. Click the "Generate Password" button to create a new password
 4. Use the copy button to copy the password to your clipboard
 
-## Live Demo
-Visit the live demo at https://codelock.vercel.app
+
 
 ## Local Development
 To run this project locally:
