@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;700&family=VT323&display=swap');
 
 :root {
-    --bg-color: #0a0a0a;
+    --bg-color: #000000;
     --card-bg: #121212;
     --text-color: #f0f0f0;
     --highlight-color: #00c8ff;
@@ -34,87 +34,15 @@ body {
     margin: 0;
     line-height: 1.6;
     position: relative;
-    overflow: hidden;
-}
-
-/* Particle System Container */
-.particle-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-    overflow: hidden;
-    background-color: #000000;
-    transition: opacity 0.3s ease;
-}
-
-/* Pulse animation for particle system */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.particle-container.pulse {
-    animation: pulse 0.5s ease-in-out;
-}
-
-#particle-canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 /* Content Container */
 .container {
     position: relative;
-    z-index: 10;
+    z-index: 1;
     margin-top: 5vh;
     margin-bottom: 5vh;
     pointer-events: auto;
-}
-
-/* Ensure the 3D model doesn't interfere with UI interactions */
-.particle-container {
-    pointer-events: none;
-}
-
-#particle-canvas {
-    pointer-events: auto;
-}
-
-/* Overlay for better readability */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
-    z-index: -5;
-    pointer-events: none;
-}
-
-/* Subtle grid effect */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(90deg, rgba(0, 200, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(rgba(144, 0, 255, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
-    z-index: -4;
-    pointer-events: none;
 }
 
 .container {
@@ -416,10 +344,6 @@ footer {
     header p {
         font-size: 0.9rem;
     }
-    
-    #particle-canvas {
-        opacity: 0.8; /* Slightly reduce opacity on tablets for better UI visibility */
-    }
 }
 
 @media (max-width: 480px) {
@@ -439,10 +363,6 @@ footer {
     
     .generate-btn {
         padding: 0.8rem 1.5rem;
-    }
-    
-    #particle-canvas {
-        opacity: 0.6; /* Further reduce opacity on phones for better UI visibility */
     }
 }
 
@@ -489,39 +409,3 @@ footer {
 .copied {
     animation: pulse 0.5s;
 }
-
-/* Cyber Decorations */
-.cyber-lines {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.cyber-lines::before, .cyber-lines::after {
-    content: '';
-    position: absolute;
-    background: var(--highlight-color);
-    opacity: 0.1;
-}
-
-.cyber-lines::before {
-    top: 50px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    box-shadow: 0 0 8px var(--highlight-color);
-}
-
-.cyber-lines::after {
-    top: 0;
-    left: 50px;
-    width: 1px;
-    height: 100%;
-    box-shadow: 0 0 8px var(--highlight-color);
-}
-
-/* Cyber corner accents already defined above */

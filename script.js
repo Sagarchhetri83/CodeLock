@@ -1,32 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Handle interaction between particle system and UI
-    const particleContainer = document.getElementById('particle-container');
-    const container = document.querySelector('.container');
-    
-    // Ensure UI elements are always interactive
-    if (particleContainer && container) {
-        // When hovering over the password generator, reduce particle system opacity
-        container.addEventListener('mouseenter', () => {
-            particleContainer.style.opacity = '0.3'; // Dim the particles when interacting with UI
-        });
-        
-        container.addEventListener('mouseleave', () => {
-            particleContainer.style.opacity = '1'; // Restore full opacity when not interacting with UI
-        });
-        
-        // Add visual feedback when generating password
-        const generateBtn = document.getElementById('generate-btn');
-        if (generateBtn) {
-            generateBtn.addEventListener('click', () => {
-                // Create a pulse effect in the particle system
-                particleContainer.classList.add('pulse');
-                setTimeout(() => {
-                    particleContainer.classList.remove('pulse');
-                }, 500);
-            });
-        }
-    }
-    
     // DOM Elements
     const passwordOutput = document.getElementById('password-output');
     const copyBtn = document.getElementById('copy-btn');
